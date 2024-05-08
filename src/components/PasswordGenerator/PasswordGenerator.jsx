@@ -15,7 +15,8 @@ export const PasswordGenerator = () => {
   };
 
   return (
-    <div className='password-wrapper'>
+    <div className='container'>
+      <div className='password-wrapper'>
       <div className='gif'>
         <img src={passwordGif} alt='Password Gif' />
       </div>
@@ -70,6 +71,7 @@ export const PasswordGenerator = () => {
           name='specialChars'
         />
       </div>
+    </div>
     </div>
   );
 };
