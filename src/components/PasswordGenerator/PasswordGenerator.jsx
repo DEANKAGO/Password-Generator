@@ -28,8 +28,8 @@ export const PasswordGenerator = () => {
     if (useNumbers) charset += '0123456789';
     if (useSymbols) charset += '!@#$%^&*()';
 
-    for (let i = 0; i < charset.length; i++) {
-      newPassword = charset.charAt(Math.floor(Math.random() * charset.length));
+    for (let i = 0; i < passwordLength; i++) {
+      newPassword += charset.charAt(Math.floor(Math.random() * charset.length));
     }
     setPassword(newPassword);
   };
@@ -49,7 +49,12 @@ export const PasswordGenerator = () => {
         </div>
         <div className='password-input-wrapper'>
           <div className='password-field'>
-            <input type='text' placeholder='your password' value='ABCDEFGHIJ' />
+            <input
+              type='text'
+              placeholder='your password'
+              readOnly
+              value={password}
+            />
             <img
               src={refreshIcon}
               alt='refresh the password'
@@ -68,6 +73,7 @@ export const PasswordGenerator = () => {
             <span>{passwordLength}</span>
           </div>
           <Slider
+            type='number'
             max={30}
             min={6}
             value={passwordLength}
