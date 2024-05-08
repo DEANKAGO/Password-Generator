@@ -1,12 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { PasswordGenerator } from './components/PasswordGenerator/PasswordGenerator';
 
-function App() {
-  return (
-    <div className='App'>
-      <h1 className=''>Hello World</h1>
-    </div>
-  );
-}
-
+function App () {
+  return <PasswordGenerator/>
+};
 export default App;
