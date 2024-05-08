@@ -19,6 +19,21 @@ export const PasswordGenerator = () => {
     setPasswordLength(value);
   };
 
+  const getPassword = () => {
+    let charset = '';
+    let newPassword = '';
+
+    if (useUpperCase) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if (useLowerCase) charset += 'abcdefghijklmnopqrstuvwxyz';
+    if (useNumbers) charset += '0123456789';
+    if (useSymbols) charset += '!@#$%^&*()';
+
+    for (let i = 0; i < charset.length; i++) {
+      newPassword = charset.charAt(Math.floor(Math.random() * charset.length));
+    }
+    setPassword(newPassword);
+  };
+
   return (
     <div className='container'>
       <div className='password-wrapper'>
