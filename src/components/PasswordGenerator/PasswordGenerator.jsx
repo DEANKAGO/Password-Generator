@@ -75,7 +75,7 @@ export const PasswordGenerator = () => {
             Copy
           </button>
         </div>
-        <span className='fw-500 health'>Weak</span>
+        <span className='health'></span>
         <div className='slider'>
           <div>
             <label id='slider-label'>Password Length: </label>
