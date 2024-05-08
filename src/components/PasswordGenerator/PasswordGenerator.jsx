@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './passwordGenerator.css';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import Checkbox from '../Checkbox/Checkbox';
 
 import passwordGif from '../../assets/gifs/password.gif';
 import refreshIcon from '../../assets/icons/refresh.svg';
@@ -21,7 +22,7 @@ export const PasswordGenerator = () => {
       <div className='tac'>
         <h2 className='title'>PASSWORD GENERATOR</h2>
         <p className='subtitle'>
-          Ensure online account safety by creating strong and secure passwords
+        Generate strong and random passwords to keep your accounts safe online!
         </p>
       </div>
       <div className='password-input-wrapper'>
@@ -34,7 +35,7 @@ export const PasswordGenerator = () => {
           Copy
         </button>
       </div>
-      <span className='fw-500'>Weak</span>
+      <span className='fw-500 health'>Weak</span>
       <div className='slider'>
         <div>
           <label id='slider-label'>Password Length: </label>
@@ -46,6 +47,27 @@ export const PasswordGenerator = () => {
           value={passwordLength}
           onChange={onChangePasswordLength}
           className='slider-style'
+        />
+      </div>
+      <div className='elements'>
+        <Checkbox
+          id='uppercase'
+          label='Uppercase'
+          checked={true}
+          name='upper'
+        />
+        <Checkbox
+          id='lowercase'
+          label='Lowercase'
+          checked={false}
+          name='lower'
+        />
+        <Checkbox id='numbers' label='Numbers' checked={false} name='numbers' />
+        <Checkbox
+          id='special chars'
+          label='Special Characters'
+          checked={true}
+          name='specialChars'
         />
       </div>
     </div>
