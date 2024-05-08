@@ -50,7 +50,11 @@ export const PasswordGenerator = () => {
         <div className='password-input-wrapper'>
           <div className='password-field'>
             <input type='text' placeholder='your password' value='ABCDEFGHIJ' />
-            <img src={refreshIcon} alt='refresh the password' />
+            <img
+              src={refreshIcon}
+              alt='refresh the password'
+              onClick={getPassword}
+            />
           </div>
           <button className='copy-btn'>
             <img src={copyIcon} alt='copy password' />
@@ -65,7 +69,7 @@ export const PasswordGenerator = () => {
           </div>
           <Slider
             max={30}
-            min={5}
+            min={6}
             value={passwordLength}
             onChange={onChangePasswordLength}
             className='slider-style'
@@ -75,26 +79,30 @@ export const PasswordGenerator = () => {
           <Checkbox
             id='uppercase'
             label='Uppercase'
-            checked={true}
+            checked={useUpperCase}
             name='upper'
+            onChange={() => setUseUpperCase(!useUpperCase)}
           />
           <Checkbox
             id='lowercase'
             label='Lowercase'
-            checked={false}
+            checked={useLowerCase}
             name='lower'
+            onChange={() => setUseLowerCase(!useLowerCase)}
           />
           <Checkbox
             id='numbers'
             label='Numbers'
-            checked={false}
+            checked={useNumbers}
             name='numbers'
+            onChange={() => setUseNumbers(!useNumbers)}
           />
           <Checkbox
             id='special chars'
-            label='Special Characters'
-            checked={true}
+            label='Symbols'
+            checked={useSymbols}
             name='specialChars'
+            onChange={() => setUseSymbols(!useSymbols)}
           />
         </div>
       </div>
