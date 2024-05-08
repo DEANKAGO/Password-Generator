@@ -10,7 +10,9 @@ const Checkbox = ({ id, label, checked, name, onChange }) => {
         name={name}
         onChange={onChange}
       />
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id} style={{ fontFamily: 'Poppins' }}>
+        {label}
+      </label>
     </div>
   );
 };

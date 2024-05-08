@@ -78,7 +78,9 @@ export const PasswordGenerator = () => {
         <span className='health'></span>
         <div className='slider'>
           <div>
-            <label id='slider-label'>Password Length: </label>
+            <label id='slider-label' style={{ fontFamily: 'Poppins' }}>
+              Password Length:{' '}
+            </label>
             <span>{passwordLength}</span>
           </div>
           <Slider
