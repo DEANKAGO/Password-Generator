@@ -34,6 +34,15 @@ export const PasswordGenerator = () => {
     setPassword(newPassword);
   };
 
+  const copy = () => {
+    let l = document.createElement('textarea');
+    l.value = password;
+    document.body.appendChild(l);
+    l.select();
+    document.execCommand('copy');
+    document.body.removeChild(l);
+  };
+
   return (
     <div className='container'>
       <div className='password-wrapper'>
@@ -61,7 +70,7 @@ export const PasswordGenerator = () => {
               onClick={getPassword}
             />
           </div>
-          <button className='copy-btn'>
+          <button className='copy-btn' onClick={copy}>
             <img src={copyIcon} alt='copy password' />
             Copy
           </button>
